@@ -1,4 +1,7 @@
 http = require("http")
 http.createServer((q,s)=>{
-  s.end("Hi")
+  console.log("Connection! Woohoo!")
+  q.on('data',(d)=>{
+    console.log(d.toString())
+  })
 }).listen(80)
